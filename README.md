@@ -12,20 +12,20 @@ There are nearly no comments. I'm working on making the code more readable.
 
 ### To-do
 
-[x] Login
-[x] Main timeline
-[x] Profile
-[ ] Voting
-[ ] Infinite loading in timelines
-[ ] Pull to refresh
-[ ] Image viewer
-[ ] Settings
-[ ] Post/reply
-[ ] Mentions
-[ ] Bookmarks
-[ ] Alles People
-[ ] Horizontal layout
-[ ] Desktop support
+- [x] Login
+- [x] Main timeline
+- [x] Profile
+- [ ] Voting
+- [ ] Infinite loading in timelines
+- [ ] Pull to refresh
+- [ ] Image viewer
+- [ ] Settings
+- [ ] Post/reply
+- [ ] Mentions
+- [ ] Bookmarks
+- [ ] Alles People
+- [ ] Horizontal layout
+- [ ] Desktop support
 ...
 
 ### Build
