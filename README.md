@@ -15,7 +15,7 @@ There are nearly no comments. I'm working on making the code more readable.
 - [x] Login
 - [x] Main timeline
 - [x] Profile
-- [ ] Voting
+- [x] Voting
 - [ ] Infinite loading in timelines
 - [ ] Pull to refresh
 - [x] Image viewer
