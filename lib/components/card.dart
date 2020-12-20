@@ -61,16 +61,16 @@ class VoliCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)),
               padding: const EdgeInsets.all(1),
               child: Container(
-                decoration: BoxDecoration(
-                    color: Theme.of(context).cardColor,
-                    borderRadius: _borderRadius),
+                decoration: BoxDecoration(borderRadius: _borderRadius),
                 child: ClipRRect(
                     clipBehavior: Clip.antiAlias,
                     borderRadius: _borderRadius,
-                    child: InkWell(
-                        onTap: onTap,
-                        borderRadius: _borderRadius,
-                        child: child)),
+                    child: Material(
+                        color: Theme.of(context).cardColor,
+                        child: InkWell(
+                            onTap: onTap,
+                            borderRadius: _borderRadius,
+                            child: child))),
               ),
             ),
             Container(
