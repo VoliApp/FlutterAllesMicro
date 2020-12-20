@@ -16,17 +16,6 @@ class _HomeState extends State<Home> {
   double paddingLeft = 0;
   int page = 0;
 
-  List<BottomNavigationBarItem> itemsBottom = [
-    BottomNavigationBarItem(
-        icon: Icon(Icons.home_outlined),
-        activeIcon: Icon(Icons.home),
-        label: 'Home'),
-    BottomNavigationBarItem(
-        icon: Icon(Icons.notifications_outlined),
-        activeIcon: Icon(Icons.notifications),
-        label: 'Notifications'),
-  ];
-
   void goToPage(int index) {
     setState(() => page = index);
     pageController.animateToPage(page,
@@ -58,7 +47,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.create),
+        child: Icon(Icons.create_outlined),
         onPressed: () => Navigator.push(
             context, TopToBottomRoute(builder: (context) => CreatePost())),
       ),
@@ -67,7 +56,16 @@ class _HomeState extends State<Home> {
         unselectedFontSize: 14,
         currentIndex: page,
         onTap: goToPage,
-        items: itemsBottom,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(Icons.home),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_outlined),
+              activeIcon: Icon(Icons.notifications),
+              label: 'Notifications'),
+        ],
       ),
     );
   }

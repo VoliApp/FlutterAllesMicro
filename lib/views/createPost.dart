@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voli/components/customButton.dart';
 
 class CreatePost extends StatefulWidget {
   final String id;
@@ -40,10 +41,12 @@ class _CreatePostState extends State<CreatePost> {
                 ? Padding(
                     padding: EdgeInsets.all(4),
                     child: CircularProgressIndicator())
-                : IconButton(
-                    icon: Icon(Icons.send_outlined),
-                    onPressed: send,
-                  )
+                : Padding(
+                    padding: EdgeInsets.all(8),
+                    child: CustomButton(
+                      fillSpace: false,
+                      text: "Post",
+                    ))
           ],
         ),
         body: Container(
@@ -72,7 +75,7 @@ class _CreatePostState extends State<CreatePost> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     IconButton(
-                      icon: Icon(Icons.add_a_photo_outlined),
+                      icon: Icon(Icons.insert_photo_outlined),
                       onPressed: () {},
                     ),
                     IconButton(

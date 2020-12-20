@@ -58,8 +58,14 @@ class _ProfileComponentInfoState extends State<ProfileComponentInfo> {
                     children: [
                       // If the user doesn't have an username, don't show it.
                       widget.user.username != null
-                          ? Text(widget.user.username,
-                              style: Theme.of(context).textTheme.bodyText1)
+                          ? Row(
+                              children: [
+                                Text(widget.user.username,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1),
+                                if (widget.user.following.me) SizedBox(width: 8)
+                              ],
+                            )
                           : SizedBox(height: 0),
 
                       // If the user follows the viewer, show the Follows you tag

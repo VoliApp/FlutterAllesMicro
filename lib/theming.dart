@@ -21,8 +21,12 @@ class ThemeProvider extends ChangeNotifier {
       brightness: darkTheme ? Brightness.dark : Brightness.light,
       scaffoldBackgroundColor:
           darkTheme ? Color(0xFF121212) : Color(0xFFF5F5F5),
+
+      // card outline
+      canvasColor: darkTheme ? Color(0xFF393939) : Color(0xFFC5C5C5),
+      cardColor: darkTheme ? Color(0xFF212121) : Colors.white,
       cardTheme: CardTheme(
-        elevation: 1,
+        elevation: 0,
         color: darkTheme ? Color(0x12E0E0E0) : Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -47,6 +51,7 @@ class ThemeProvider extends ChangeNotifier {
           textTheme: TextTheme(
               headline6: TextStyle(
                   color: darkTheme ? Color(0xFFE0E0E0) : Colors.black,
+                  fontWeight: FontWeight.w600,
                   fontSize: 20))),
       floatingActionButtonTheme:
           FloatingActionButtonThemeData(backgroundColor: accentColor),

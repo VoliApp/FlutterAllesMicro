@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-var _borderRadius = BorderRadius.circular(100);
-
 class CircularNetworkImage extends StatelessWidget {
   final double size;
   final String imageUrl;

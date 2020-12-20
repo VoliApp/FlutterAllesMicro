@@ -17,11 +17,15 @@ class Start extends StatelessWidget {
         title: Text('Home'),
         centerTitle: true,
         actions: [
-          IconButton(
-              icon: CircularNetworkImage(
-                  "https://avatar.alles.cc/${Preferences.id}?size=35", 35),
-              onPressed: () => Navigator.of(context).push(BottomToTopRoute(
-                  builder: (context) => Profile(Preferences.id))))
+          Padding(
+            padding: EdgeInsets.fromLTRB(8, 8, 16, 8),
+            child: IconButton(
+                padding: EdgeInsets.zero,
+                icon: CircularNetworkImage(
+                    "https://avatar.alles.cc/${Preferences.id}?size=35", 32),
+                onPressed: () => Navigator.of(context).push(BottomToTopRoute(
+                    builder: (context) => Profile(Preferences.id)))),
+          )
         ],
       ),
       body: FutureBuilder(

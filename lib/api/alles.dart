@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:voli/api/post.dart';
 import 'package:voli/api/user.dart';
 import 'package:voli/models/allesUser.dart';
 import 'package:voli/preferences.dart';
@@ -52,4 +53,5 @@ class Alles {
 
   static User user = User();
   static Feed feed = Feed();
+  static Post post = Post();
 }

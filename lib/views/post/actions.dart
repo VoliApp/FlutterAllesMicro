@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
+import 'package:voli/api/alles.dart';
 import 'package:voli/models/allesPost.dart';
 import 'package:voli/util/timeParser.dart';
 import 'package:voli/util/topToBottomRoute.dart';
@@ -24,14 +25,19 @@ class PostComponentActions extends StatefulWidget {
 }
 
 class _PostComponentActionsState extends State<PostComponentActions> {
+  int prevVote;
   int voted;
   int score;
 
-  void vote(int id) {
+  void vote(int id) async {
     setState(() {
+      prevVote = voted;
       voted = id != voted ? id : 0;
     });
-    // TODO: Do vote http request
+    // Send vote request
+    bool isVoteSuccessful = await Alles.post.vote(widget.postId, id);
+    // If the vote wasn't successful, don't show that the vote was casted.
+    setState(() => voted = isVoteSuccessful ? voted : prevVote);
   }
 
   void share() => Share.share("https://micro.alles.cx/p/${widget.postId}");
@@ -53,6 +59,7 @@ class _PostComponentActionsState extends State<PostComponentActions> {
       children: [
         Row(
           children: [
+            // Negative vote
             IconButton(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 icon: Icon(Icons.remove),
@@ -60,24 +67,37 @@ class _PostComponentActionsState extends State<PostComponentActions> {
                 color: voted == -1
                     ? Colors.blue
                     : Theme.of(context).disabledColor),
+
+            // Vote count
             Text(score.toString()),
+
+            // Positive vote
             IconButton(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 icon: Icon(Icons.add),
                 onPressed: () => vote(score != 1 ? 1 : 0),
                 color:
                     voted == 1 ? Colors.red : Theme.of(context).disabledColor),
+
+            // Reply
             IconButton(
                 padding: const EdgeInsets.symmetric(vertical: 4),
-                icon: Icon(Icons.reply),
+                icon: Icon(Icons
+                    .reply_outlined), // TODO: get current outlined icon because for some reason flutter has the old icon
                 onPressed: reply),
+
+            // Reply count
             Text(widget.replies.toString()),
+
+            // Share
             IconButton(
                 padding: const EdgeInsets.symmetric(vertical: 4),
-                icon: Icon(Icons.share),
+                icon: Icon(Icons.share_outlined),
                 onPressed: share)
           ],
         ),
+
+        // Time ago
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Text(timeAgoFromUTC(widget.time)))

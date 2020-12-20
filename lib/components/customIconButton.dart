@@ -16,18 +16,19 @@ class CustomIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
+    return Padding(
         padding: EdgeInsets.all(padding),
-        child: Container(
-          decoration: BoxDecoration(
-              color: circleDarkBackground ? Colors.black45 : Colors.transparent,
-              borderRadius: BorderRadius.circular(100)),
-          padding: EdgeInsets.all(8),
-          child: FittedBox(child: icon, fit: BoxFit.contain),
-        ),
-      ),
-    );
+        child: InkWell(
+          borderRadius: BorderRadius.circular(100),
+          onTap: onTap,
+          child: Container(
+            decoration: BoxDecoration(
+                color:
+                    circleDarkBackground ? Colors.black45 : Colors.transparent,
+                borderRadius: BorderRadius.circular(100)),
+            padding: EdgeInsets.all(8),
+            child: FittedBox(child: icon, fit: BoxFit.contain),
+          ),
+        ));
   }
 }

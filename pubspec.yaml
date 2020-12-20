@@ -16,6 +16,9 @@ dependencies:
   url_launcher:
   share:
   cached_network_image:
+  fluentui_system_icons: ^1.1.88
+  photo_view:
+  permission_handler:
   
 
 flutter:
