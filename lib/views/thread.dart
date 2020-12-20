@@ -62,7 +62,7 @@ class _ThreadState extends State<Thread> {
                       child: Center(child: CircularProgressIndicator()))
               : SizedBox(height: 0),
           // Selected post
-          Post(post, highlight: true),
+          Post(post, highlight: true, threadChild: widget.post.parent != null),
           // Divider
           Padding(
             padding: EdgeInsets.symmetric(vertical: 4),

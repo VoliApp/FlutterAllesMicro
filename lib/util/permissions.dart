@@ -1,4 +1,3 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:voli/util/alertDialogs.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -11,7 +10,7 @@ Future<bool> askForStoragePermission(BuildContext context) async {
   } else {
     var dialog = CustomDialog(
         context: context,
-        icon: Icon(FluentIcons.storage_24_regular),
+        icon: Icon(Icons.storage),
         title: 'Storage permission',
         body:
             'To save this to your gallery, the app needs the storage permission',

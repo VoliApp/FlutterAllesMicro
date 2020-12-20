@@ -1,5 +1,5 @@
 name: voli
-description: A new Flutter project.
+description: Alles Micro client
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -16,10 +16,8 @@ dependencies:
   url_launcher:
   share:
   cached_network_image:
-  fluentui_system_icons: ^1.1.88
   photo_view:
   permission_handler:
   
-
 flutter:
   uses-material-design: true

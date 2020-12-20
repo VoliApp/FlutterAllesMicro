@@ -11,8 +11,6 @@ class ProfileComponentBlurredHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16), topRight: Radius.circular(16)),
         child: Container(
             height: 100,
             decoration: BoxDecoration(
