@@ -18,7 +18,7 @@ There are nearly no comments. I'm working on making the code more readable.
 - [ ] Voting
 - [ ] Infinite loading in timelines
 - [ ] Pull to refresh
-- [ ] Image viewer
+- [x] Image viewer
 - [ ] Settings
 - [ ] Post/reply
 - [ ] Mentions
@@ -32,8 +32,8 @@ There are nearly no comments. I'm working on making the code more readable.
 
 Tested build environment: 
 
-- Windows 10 20H2 (Version 10.0.19042.630)
-- Flutter 1.24.0-10.2.pre
+- Windows 10 20H2 (Version 10.0.19042.685)
+- Flutter 1.22.5
 - Android SDK 30.0.2
 - App tested on Android 10
 
